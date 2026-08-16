@@ -1,0 +1,27 @@
+def guess_num():
+    low=int(input("Enter lower Bound: "))
+    high=int(input("Enter Upper Bound: "))
+    print(f"Guess a number between {low} and {high}")
+    num=random.randint(low,high)
+    for i in range(7):
+        guess=int(input("enter the guessed number:"))
+        if guess<num:
+            print("Too Low! Try again.")
+        elif guess>num:
+            print("Too High! Try again.")
+        else:
+            print(f"Congratulations! You guessed the number {num} correctly.")
+            return 
+    print(f"You Loss! The number was {num}.")
+    return
+
+
+import random 
+print("Welcome to the Number Guessing Game!\n You have 7 chances to guess the number, Let's start!")
+guess_num()
+
+print("Want to play again? (yes/no):")
+if input().lower()=='yes':
+    guess_num()
+else: 
+    print("Thanks for playing! Goodbye!")
